@@ -1,4 +1,9 @@
+import { cityWeather } from "../actions";
+
 export default function (state=[],action)
-{   console.log(action);
+{   switch(action.type)
+    {
+        case cityWeather:return [action.payload.data,...state] // similar to state.concat(action.payload.data)
+    }
     return state;
 }
