@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import {getWeather} from '../actions/index';
+import getWeather from '../actions/index';
 class Search extends Component
 {   constructor(props)
     {   super(props);
@@ -12,13 +12,14 @@ class Search extends Component
         
     }
     inputChange(event)
-    {   console.log(event.target.value);
+    {   
         this.setState({term:event.target.value});
     }
     onFormSubmit(event)
     {
         event.preventDefault();
-        this.props.getWeather(this.props.term);
+
+        this.props.getWeather(this.state.term);
         this.setState({term:''});        
 
     }

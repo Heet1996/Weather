@@ -1,11 +1,12 @@
 import React,{Component} from 'react';
 import {connect} from 'react-redux';
-export class WeatherList extends Component
-{   getList(city)
-    {
+class WeatherList extends Component
+{   
+    getList(cityName)
+    {   const name=cityName.city.name;
         return (
-            <tr>
-            <td>{city.name}</td>
+            <tr key={name}>
+            <td>{name}</td>
             </tr>
         )
 
